@@ -6,7 +6,13 @@ tags:
 comments: ture
 date: 2019-10-29 13:36:50
 categories: 配置
+top: 100
+
 ---
+<div class="note default"><p>default</p></div>
+
+<span id="inline-toc">1.</span>
+<div class="note success"><p>success</p></div>
 
 - fork me on github
   代码获取：[图标](http://tholman.com/github-corners/)、[文字](https://github.blog/2008-12-19-github-ribbons/)
@@ -29,6 +35,11 @@ categories: 配置
      2. `opacity`: 线条透明度（0~1）, 默认: 0.5
      3. `count`: 线条的总数量, 默认: 150
      4. `zIndex`: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1
+  4. 精简，搭配3
+   在根目录下执行如下命令：
+  `$ git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest`
+  然后在主题配置文件中设置 canvas_nest: true 即可。
+
 - 点击效果(未试验)
   
 - 链接样式
@@ -87,9 +98,49 @@ categories: 配置
     </div>
     ```
 
-- 统计功能
+- 统计功能(未完成)
   1. 在根目录下运行
     ```
     npm install hexo-wordcount --save
     ```
   2. 
+
+- 文章加密
+  参考链接：[hexo-blog-encrypt](https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md)
+
+- 字数统计以及阅读时间
+  参考链接：[hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time)
+
+- 置顶
+  1. 将`node_modules/hexo-generator-index/lib/generator.js`内代码替换为
+    ```   
+    'use strict';
+    var pagination = require('hexo-pagination');
+    module.exports = function(locals){
+      var config = this.config;
+      var posts = locals.posts;
+        posts.data = posts.data.sort(function(a, b) {
+            if(a.top && b.top) { // 两篇文章top都有定义
+                if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+                else return b.top - a.top; // 否则按照top值降序排
+            }
+            else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+                return -1;
+            }
+            else if(!a.top && b.top) {
+                return 1;
+            }
+            else return b.date - a.date; // 都没定义按照文章日期降序排
+        });
+      var paginationDir = config.pagination_dir || 'page';
+      return pagination('', posts, {
+        perPage: config.index_generator.per_page,
+        layout: ['index', 'archive'],
+        format: paginationDir + '/%d/',
+        data: {
+          __index: true
+        }
+      });
+    };
+    ```
+    2. 在文章中添加`top`,数值越大文章越靠前

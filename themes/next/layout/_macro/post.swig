@@ -41,7 +41,6 @@
         </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
 
         <div class="post-meta">
-
           {%- set date_diff = date(post.date) != date(post.updated) %}
           {%- set time_diff = time(post.date) != time(post.updated) %}
           {%- set datetime_diff = date_diff or time_diff %}
@@ -105,7 +104,7 @@
                 <i class="fa fa-eye"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              <span class="leancloud-visitors-count"></span>              <span>℃</span>
+              <span class="leancloud-visitors-count"></span>              
             </span>
           {%- endif %}
 
@@ -168,8 +167,8 @@
     {### POST BODY ###}
     {#################}
     <div class="post-body{%- if post.direction and post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
-
-      {# Gallery support #}
+    
+          {# Gallery support #}
       {%- if post.photos and post.photos.length %}
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {%- set COLUMN_NUMBER = 3 %}
@@ -214,7 +213,7 @@
         {{ post.content }}
       {%- endif %}
     </div>
-
+    
     {#####################}
     {### END POST BODY ###}
     {#####################}
