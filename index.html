@@ -17,8 +17,9 @@
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.2">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 
 <script id="hexo-configurations">
@@ -30,9 +31,9 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
+    fancybox: true,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
@@ -43,7 +44,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -196,11 +197,38 @@
   </li>
       
     
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+          <i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+    
   </ul>
 
     
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -253,7 +281,7 @@
                 
               
 
-              <time title="创建时间：2019-10-29 13:36:50 / 修改时间：17:01:16" itemprop="dateCreated datePublished" datetime="2019-10-29T13:36:50+08:00">2019-10-29</time>
+              <time title="创建时间：2019-10-29 13:36:50 / 修改时间：20:04:58" itemprop="dateCreated datePublished" datetime="2019-10-29T13:36:50+08:00">2019-10-29</time>
             </span>
           
             
@@ -287,6 +315,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3.2k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -295,22 +344,71 @@
     
     
     <div class="post-body" itemprop="articleBody">
+    
+          
+          <ul>
+<li><p>fork me on github<br>代码获取：<a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">图标</a>、<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">文字</a><br>配置：复制的代码需要的样式到themes/next/layout/_layout.swig文件中(放在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>的下面)，并把href改为你的github地址</p>
+</li>
+<li><p>动态背景</p>
+<ol>
+<li><p>修改_layout.swig<br>打开/next/layout/_layout.swig<br>在<body><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>内添加代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.canvas_nest %&#125;</span><br><span class="line">color=<span class="string">"0,0,255"</span> opacity=<span class="string">'0.7'</span> zIndex=<span class="string">"-2"</span> count=<span class="string">"99"</span> &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>修改配置文件<br>打开/next/_config.yml,将<code>canvas_nest:false</code>改为<code>canvas_nest:true</code>(利用搜索)</p>
+</li>
+<li><p>自定义参数</p>
+<ol>
+<li><code>color</code>: 线条颜色, 默认: ‘0,0,0’；三个数字分别为(R,G,B)</li>
+<li><code>opacity</code>: 线条透明度（0~1）, 默认: 0.5</li>
+<li><code>count</code>: 线条的总数量, 默认: 150</li>
+<li><code>zIndex</code>: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1</li>
+</ol>
+</li>
+<li><p>精简，搭配3<br>在根目录下执行如下命令：<br><code>$ git clone https://github.com/theme-next/theme-next-canvas-nest themes/next/source/lib/canvas-nest</code><br>然后在主题配置文件中设置 canvas_nest: true 即可。</p>
+</li>
+</ol>
+</li>
+<li><p>点击效果(未试验)</p>
+</li>
+<li><p>链接样式<br>修改<code>themes\next\source\css\_common\components\post\post.styl</code>,在末尾添加css样式</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  // 文章内链接文本样式</span><br><span class="line">  <span class="selector-class">.post-body</span> <span class="selector-tag">p</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#0593d3</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#0593d3</span>;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">      <span class="selector-tag">color</span>: <span class="selector-id">#fc6423</span>;</span><br><span class="line">      <span class="selector-tag">border-bottom</span>: <span class="selector-tag">none</span>;</span><br><span class="line">      <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#fc6423</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ```   </span><br><span class="line">  其中选择<span class="selector-class">.post-body</span> 是为了不影响标题，选择 <span class="selector-tag">p</span> 是为了不影响首页“阅读全文”的显示样式,颜色可以自己定义。</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">-</span> 标签<span class="selector-tag">logo</span></span><br><span class="line">  修改`/themes/next/_config.yml`,搜索`tag_icon`，参数改为`true`</span><br><span class="line">  </span><br><span class="line"><span class="selector-tag">-</span> 文章阴影效果(未完成)</span><br><span class="line">  </span><br><span class="line"><span class="selector-tag">-</span> 访问量</span><br><span class="line">  1. 打开`\themes\next\layout\_partials\footer.swig`文件,在`&lt;div class="copyright" &gt;`前加上添加代码</span><br><span class="line">  ```<span class="selector-tag">css</span></span><br><span class="line">  &lt;div class="powered-by"&gt;</span><br><span class="line">  &lt;i class="fa fa-user-md"&gt;&lt;/i&gt;&lt;span id="busuanzi_container_site_uv"&gt;</span><br><span class="line">  本站访客数:&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在合适位置显示统计的代码，在<code>&lt;div class=&quot;powered-by&quot;&gt;</code>前添加代码<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="powered-by"&gt;</span><br><span class="line">&lt;i class="fa fa-user-md"&gt;&lt;/i&gt;&lt;span id="busuanzi_container_site_uv"&gt;</span><br><span class="line">本站访客数:&lt;span id="busuanzi_value_site_uv"&gt;&lt;/span&gt;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>添加热度(未完成)</p>
+</li>
+<li><p>网站字数统计</p>
+<ol>
+<li>在根目录下运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure></li>
+<li>在<code>/themes/next/layout/_partials/footer.swig</code>合适位置文件尾部加上：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class="post-meta-divider"&gt;|&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class="theme-info"&gt;</span><br><span class="line">&lt;div class="powered-by"&gt;&lt;/div&gt;</span><br><span class="line">&lt;span class="post-count"&gt;博客全站共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>统计功能(未完成)</p>
+<ol>
+<li>在根目录下运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure></li>
+<li></li>
+</ol>
+</li>
+<li><p>文章加密<br>参考链接：<a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener">hexo-blog-encrypt</a></p>
+</li>
+<li><p>字数统计以及阅读时间<br>参考链接：<a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">hexo-symbols-count-time</a></p>
+</li>
+<li><p>置顶</p>
+<ol>
+<li>将<code>node_modules/hexo-generator-index/lib/generator.js</code>内代码替换为<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">var pagination = require(&apos;hexo-pagination&apos;);</span><br><span class="line">module.exports = function(locals)&#123;</span><br><span class="line">  var config = this.config;</span><br><span class="line">  var posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(function(a, b) &#123;</span><br><span class="line">        if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义</span><br><span class="line">            if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排</span><br><span class="line">            else return b.top - a.top; // 否则按照top值降序排</span><br><span class="line">        &#125;</span><br><span class="line">        else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        else return b.date - a.date; // 都没定义按照文章日期降序排</span><br><span class="line">    &#125;);</span><br><span class="line">  var paginationDir = config.pagination_dir || &apos;page&apos;;</span><br><span class="line">  return pagination(&apos;&apos;, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [&apos;index&apos;, &apos;archive&apos;],</span><br><span class="line">    format: paginationDir + &apos;/%d/&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在文章中添加<code>top</code>,数值越大文章越靠前</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
 
-      
-          有东西被加密了, 请输入密码查看.
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/29/hexo-next%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
         
       
     </div>
-
+    
     
     
     
@@ -370,6 +468,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.3k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -378,8 +497,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <ul>
 <li><p><code>$(RemoteMachine)</code><br>设置为“调试”属性页上“远程计算机”属性的值。有关更多信息，请参见更改用于 C/C++ 调试配置的项目设置。</p>
 </li>
@@ -472,7 +591,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -544,6 +663,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>201</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -552,8 +692,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><h2 id="CS231n官方笔记授权翻译总集篇发布"><a href="#CS231n官方笔记授权翻译总集篇发布" class="headerlink" title="CS231n官方笔记授权翻译总集篇发布"></a><a href="https://zhuanlan.zhihu.com/p/21930884" target="_blank" rel="noopener">CS231n官方笔记授权翻译总集篇发布</a></h2><p>   该课程是斯坦福大学计算机视觉实验室推出的课程。需要注意的是，目前大家说CS231n，大都指的是2016年冬季学期（一月到三月）的最新版本。  </p>
 <ol start="0">
 <li><p>工具：</p>
@@ -569,7 +709,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -641,6 +781,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>75</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -649,8 +810,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <h1 id="Windows-内核"><a href="#Windows-内核" class="headerlink" title="Windows 内核"></a>Windows 内核</h1><ol>
 <li>windows hook技术<ol>
 <li>detour hook (库)</li>
@@ -669,7 +830,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -733,6 +894,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>133</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -741,8 +923,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <ol>
 <li>API Monitor<br>官网：<a href="http://www.rohitab.com/apimonitor" target="_blank" rel="noopener">http://www.rohitab.com/apimonitor</a><br>简介：对某个dll在某个软件中调用的函数追踪</li>
 <li>Dependency Walker<br>官网：<a href="http://www.dependencywalker.com/" target="_blank" rel="noopener">http://www.dependencywalker.com/</a><br>简介：对dll的函数进行分析</li>
@@ -751,7 +933,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -815,6 +997,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>133</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -823,8 +1026,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <ul>
 <li><p>auto.js 开源项目</p>
 <p>地址：<a href="https://github.com/hyb1996/Auto.js" target="_blank" rel="noopener">https://github.com/hyb1996/Auto.js</a><br>简介:一个支持无障碍服务的Android平台上的JavaScript IDE，其发展目标是JsBox和Workflow。同时有VS Code 插件可提供基础的在桌面开发的功能。</p>
@@ -834,7 +1037,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -906,6 +1109,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>357</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -914,8 +1138,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
@@ -933,7 +1157,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -1022,6 +1246,27 @@
               <span class="leancloud-visitors-count"></span>              
             </span>
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>327</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -1030,8 +1275,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
+    
+          
           <h1 id="官方资料"><a href="#官方资料" class="headerlink" title="官方资料"></a>官方资料</h1><ol>
 <li><a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next配置文档</a></li>
 </ol>
@@ -1060,7 +1305,7 @@
         
       
     </div>
-
+    
     
     
     
@@ -1110,6 +1355,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="Petrichor">
   <p class="site-author-name" itemprop="name">Petrichor</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -1178,7 +1426,19 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Petrichor</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">7k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6 分钟</span>
 </div>
+
+<!--  页脚   -->
 
   <div class="powered-by">
   <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
@@ -1186,17 +1446,62 @@
   </span>
   </div>
 
-<span class="post-meta-divider">|</span>
+  <span class="post-meta-divider">|</span>
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.6k字</span>
+  <span class="post-count">博客全站共2.5k字</span>
   </div>
 
-<!--
+<!-- hexo 版权
     <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> Petrichor v4.0.0
     </div>
     <span class="post-meta-divider">|</span>
+-->
+
+<!--  运行时间  -->
+<br>
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2019,07,21,00,00,00); //你的建站时间
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" Run for "+/*diffYears+" Year "+*/diffDays+" Days "+diffHours+" Hours "+diffMinutes+" m "+diffSeconds+" s";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+
+
+
+
+<!-- next版本
 
     <div class="theme-info">
         
@@ -1323,8 +1628,10 @@
   
     
   
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script color='100,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
@@ -1343,6 +1650,7 @@
 
 
 
+  <script src="/js/local-search.js?v=7.4.2"></script>
 
 
 
@@ -1355,19 +1663,15 @@
 
 
 
+
+
+  
 
   
 
   
 
-  
 
-
-  
-  <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-  
-
-
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
