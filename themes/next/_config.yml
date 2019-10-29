@@ -53,7 +53,7 @@ rss:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2019
+  #since: 2015
 
   # Icon between year and copyright info.
   icon:
@@ -102,6 +102,7 @@ creative_commons:
   post: false
   language: zh-CN
 
+
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -124,11 +125,11 @@ scheme: Mist
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || home  
-  #about: /about/ || user 
-  tags: /tags/ || tags  
-  categories: /categories/ || th  
-  archives: /archives/ || archive 
+  home: / || home
+  #about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -146,7 +147,7 @@ menu_settings:
 
 sidebar:
   # Sidebar Position.
-  position: right
+  position: left
   #position: right
 
   # Manual define the sidebar width. If commented, will be default for:
@@ -382,7 +383,7 @@ codeblock:
   highlight_theme: night
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result.
     show_result: false
     # Available values: default | flat | mac
@@ -397,7 +398,7 @@ back2top:
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
   color: "#37c6c0"
@@ -445,9 +446,9 @@ font:
 
   # Global font settings used for all elements inside <body>.
   global:
-    external: false
+    external: true
     family: Lato
-    size: 
+    size:
 
   # Font settings for site title (.site-title).
   title:
@@ -468,8 +469,8 @@ font:
 
   # Font settings for <code> and code blocks.
   codes:
-    external: false
-    family: Arial
+    external: true
+    family:
 
 
 # ---------------------------------------------------------------
@@ -615,7 +616,7 @@ comments:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname:
   count: true
   lazyload: false
@@ -938,8 +939,8 @@ three:
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 # For more information: https://github.com/hustcc/canvas-nest.js
-canvas_nest: 
-  enable: ture
+canvas_nest:
+  enable: false
   onmobile: true # Display on mobile or not
   color: "0,0,255" # RGB values, use `,` to separate
   opacity: 0.5 # The opacity of line: 0~1
