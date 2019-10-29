@@ -8,6 +8,8 @@ tags:
 categories: 工具
 ---
 
+# 官方资料
+1. [next配置文档](https://theme-next.iissnan.com/getting-started.html)
 
 # git安装配置
 > **流程：配置github信息 -> 生成rsa文件 -> 添加SSH**   

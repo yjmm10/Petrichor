@@ -84,7 +84,8 @@ pagination_dir: page
 # Extensssh://git@github.com:yjmm10/yjmm10.github.io
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia-plus
+theme: next
+  #yilia-plus
   #black-blue #hexo-theme-clover 
 
 # Deployment
@@ -98,21 +99,4 @@ deploy:
 ## --------------------------------------------------------
 ## --------------------------------------------------------
 
-jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
+
