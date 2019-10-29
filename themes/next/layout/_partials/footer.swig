@@ -9,6 +9,8 @@
   </div>
 {%- endif %}
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <div class="copyright">
   {%- set current = date(Date.now(), "YYYY") %}
   &copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}
@@ -42,31 +44,55 @@
 </div>
 
 {%- if theme.footer.powered.enable %}
+
   <div class="powered-by">
-    {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}
-    {%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif %}
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数: <span id="busuanzi_value_site_uv"></span>
+  </span>
   </div>
-{%- endif %}
 
-{%- if theme.footer.powered.enable and theme.footer.theme.enable %}
-  <span class="post-meta-divider">|</span>
-{%- endif %}
+<span class="post-meta-divider">|</span>
 
-{%- if theme.footer.theme.enable %}
   <div class="theme-info">
-    {%- set next_site = 'https://theme-next.org' %}
-    {%- if theme.scheme !== 'Gemini' %}
-      {%- set next_site = 'https://' + theme.scheme.toLowerCase() + '.theme-next.org' %}
-    {%- endif %}
-    {{- __('footer.theme') }} – {{ next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'}) }}
-    {%- if theme.footer.theme.version %} v{{ version }}{%- endif %}
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共{{ totalcount(site) }}字</span>
   </div>
-{%- endif %}
 
-{%- if theme.add_this_id %}
-  <div class="addthis_inline_share_toolbox">
-    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ theme.add_this_id }}" async="async"></script>
-  </div>
-{%- endif %}
+{#
+    <div class="powered-by">
+      {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}
+      {%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif %}
+    </div> 
+
+  {%- endif %}
+
+
+  {%- if theme.footer.powered.enable and theme.footer.theme.enable %}
+    <span class="post-meta-divider">|</span>
+  {%- endif %}
+
+  {%- if theme.footer.theme.enable %}
+
+    <div class="theme-info">
+      {%- set next_site = 'https://theme-next.org' %}
+      {%- if theme.scheme !== 'Gemini' %}
+        {%- set next_site = 'https://' + theme.scheme.toLowerCase() + '.theme-next.org' %}
+      {%- endif %}
+      {{- __('footer.theme') }} – {{ next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'}) }}
+      {%- if theme.footer.theme.version %} v{{ version }}{%- endif %}
+    </div>
+
+  {%- endif %}
+
+  {%- if theme.add_this_id %}
+    <div class="addthis_inline_share_toolbox">
+      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ theme.add_this_id }}" async="async"></script>
+    </div>
+  {%- endif %}
+#}
 
 {{- next_inject('footer') }}
+
+
+
+

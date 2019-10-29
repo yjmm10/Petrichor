@@ -105,7 +105,7 @@
                 <i class="fa fa-eye"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              <span class="leancloud-visitors-count"></span>
+              <span class="leancloud-visitors-count"></span>              <span>℃</span>
             </span>
           {%- endif %}
 
