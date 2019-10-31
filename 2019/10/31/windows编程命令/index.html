@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Petrichor">
 <meta property="og:description" content="指令常用类型12345678910111213141516171819202122CHAR  = char &#x2F;&#x2F;8位字符WCHAR = wchar_t &#x2F;&#x2F;16位字符DWORD = unsigned longTCHAR = WCHARTBYTE = WCHAR&#x2F;&#x2F;8位指针PCHAR = *CHAR   &#x2F;&#x2F;P = POINT指针PSTR  = *CHAR   PTBYTE = *CHARPCSTR">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-31T12:16:11.052Z">
+<meta property="og:updated_time" content="2019-10-31T12:17:25.178Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/31/windows%E7%BC%96%E7%A8%8B%E5%91%BD%E4%BB%A4/">
 
@@ -286,7 +286,7 @@
                 
               
 
-              <time title="创建时间：2019-10-31 16:16:05 / 修改时间：20:16:11" itemprop="dateCreated datePublished" datetime="2019-10-31T16:16:05+08:00">2019-10-31</time>
+              <time title="创建时间：2019-10-31 16:16:05 / 修改时间：20:17:25" itemprop="dateCreated datePublished" datetime="2019-10-31T16:16:05+08:00">2019-10-31</time>
             </span>
           
             
@@ -378,14 +378,13 @@
 <h2 id="文件处理函数"><a href="#文件处理函数" class="headerlink" title="文件处理函数"></a>文件处理函数</h2><ul>
 <li><p>CreateFileMapping：创建一个文件映射内核对象   </p>
  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">HANDLE <span class="title">CreateFileMapping</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">HANDLE hFile,                       <span class="comment">//物理文件句柄</span></span></span></span><br><span class="line"><span class="function"><span class="params">LPSECURITY_ATTRIBUTES lpAttributes, <span class="comment">//安全设置</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD flProtect,                    <span class="comment">//保护设置</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwMaximumSizeHigh,            <span class="comment">//高位文件大小</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwMaximumSizeLow,             <span class="comment">//低位文件大小</span></span></span></span><br><span class="line"><span class="function"><span class="params">LPCTSTR lpName                      <span class="comment">//共享内存名称</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>MapViewOfFile: 映射到当前进程的虚拟地址上<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LPVOID <span class="title">MapViewOfFile</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">HANDLE hFileMappingObject,  <span class="comment">// file-mapping object to map into </span></span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="comment">// address space</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwDesiredAccess,      <span class="comment">// access mode</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwFileOffsetHigh,     <span class="comment">// high-order 32 bits of file offset</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwFileOffsetLow,      <span class="comment">// low-order 32 bits of file offset</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwNumberOfBytesToMap  <span class="comment">// number of bytes to map</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-</li>
-</ul>
 <ul>
+<li><p>MapViewOfFile: 映射到当前进程的虚拟地址上</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LPVOID <span class="title">MapViewOfFile</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">HANDLE hFileMappingObject,  <span class="comment">// file-mapping object to map into </span></span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="comment">// address space</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwDesiredAccess,      <span class="comment">// access mode</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwFileOffsetHigh,     <span class="comment">// high-order 32 bits of file offset</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwFileOffsetLow,      <span class="comment">// low-order 32 bits of file offset</span></span></span></span><br><span class="line"><span class="function"><span class="params">DWORD dwNumberOfBytesToMap  <span class="comment">// number of bytes to map</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>GetModuleFileName:获取当前进程已加载模块的文件的完整路径，该模块必须由当前进程加载。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD WINAPI <span class="title">GetModuleFileName</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">_In_opt_  HMODULE hModule,   <span class="comment">//应用程序或DLL实例句柄,NULL则为获取当前程序可执行文件路径名</span></span></span></span><br><span class="line"><span class="function"><span class="params">_Out_     LPTSTR lpFilename, <span class="comment">//接收路径的字符串缓冲区</span></span></span></span><br><span class="line"><span class="function"><span class="params">_In_      DWORD nSize        <span class="comment">//接收路径的字符缓冲区的大小</span></span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
 </li>
@@ -436,8 +435,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/29/hexo-next%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/" rel="next" title="hexo next美化配置">
-                  <i class="fa fa-chevron-left"></i> hexo next美化配置
+                <a href="/2019/10/31/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B%E6%B1%87%E6%80%BB%E5%B8%96-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/" rel="next" title="机器学习教程汇总帖(持续更新)">
+                  <i class="fa fa-chevron-left"></i> 机器学习教程汇总帖(持续更新)
                 </a>
               
             </div>
@@ -445,10 +444,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/31/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B%E6%B1%87%E6%80%BB%E5%B8%96-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/" rel="prev" title="机器学习教程汇总帖(持续更新)">
-                  机器学习教程汇总帖(持续更新) <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
