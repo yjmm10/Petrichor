@@ -102,6 +102,7 @@ typedef const UCSCHAR UNALIGNED *PCUUCSCHAR;
 > - 缓冲区大小_countof(szBuffer)代替sizeof(szBuffer)
 > - 内存以字节分配，malloc(nCharacters * sizeof(TCHAR))  
 >  **易错**：用宏定义避免-> #define chmalloc(nCharacters) (TCHAR*)malloc(nCharacters * sizeof(TCHAR))
+> - 利用 `in`和`out` 识别输入输出参数，具体参考定义
 
 
 
