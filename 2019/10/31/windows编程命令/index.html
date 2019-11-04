@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Petrichor">
 <meta property="og:description" content="指令常用类型12345678910111213141516171819202122CHAR  = char &#x2F;&#x2F;8位字符WCHAR = wchar_t &#x2F;&#x2F;16位字符DWORD = unsigned longTCHAR = WCHARTBYTE = WCHAR&#x2F;&#x2F;8位指针PCHAR = *CHAR   &#x2F;&#x2F;P = POINT指针PSTR  = *CHAR   PTBYTE = *CHARPCSTR">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-01T08:58:32.808Z">
+<meta property="og:updated_time" content="2019-11-04T09:30:55.566Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/31/windows%E7%BC%96%E7%A8%8B%E5%91%BD%E4%BB%A4/">
 
@@ -297,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-01 16:58:32" itemprop="dateModified" datetime="2019-11-01T16:58:32+08:00">2019-11-01</time>
+                <time title="修改时间：2019-11-04 17:30:55" itemprop="dateModified" datetime="2019-11-04T17:30:55+08:00">2019-11-04</time>
               </span>
             
           
@@ -383,6 +383,7 @@
 <li>TEXT/_T表示常量字符和字符串</li>
 <li>缓冲区大小_countof(szBuffer)代替sizeof(szBuffer)</li>
 <li>内存以字节分配，malloc(nCharacters * sizeof(TCHAR))<br><strong>易错</strong>：用宏定义避免-&gt; #define chmalloc(nCharacters) (TCHAR*)malloc(nCharacters * sizeof(TCHAR))</li>
+<li>利用 <code>in</code>和<code>out</code> 识别输入输出参数，具体参考定义</li>
 </ul>
 </blockquote>
 <h2 id="文件处理函数"><a href="#文件处理函数" class="headerlink" title="文件处理函数"></a>文件处理函数</h2><ul>
@@ -545,7 +546,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -558,7 +559,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -571,7 +572,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -613,7 +614,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">11 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
 
 <!--  页脚   -->
@@ -628,7 +629,7 @@
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4k字</span>
+  <span class="post-count">博客全站共4.1k字</span>
   </div>
 
 <!-- hexo 版权
