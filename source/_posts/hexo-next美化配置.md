@@ -6,7 +6,6 @@ tags:
 comments: ture
 date: 2019-10-29 13:36:50
 categories: 配置
-top: 100
 
 ---
 <div class="note default"><p>default</p></div>
@@ -144,3 +143,7 @@ top: 100
     };
     ```
     2. 在文章中添加`top`,数值越大文章越靠前
+
+------
+[进阶教程](http://yearito.cn/posts/hexo-writing-skills.html)
+
