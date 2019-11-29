@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Petrichor">
 <meta property="og:description" content="官方资料 next配置文档  git安装配置 流程：配置github信息 -&amp;gt; 生成rsa文件 -&amp;gt; 添加SSH      配置用户信息 $ git config --global user.name &amp;quot;yjmm10 $ git config --global user.email yjmm10@yeah.net  注:yjmm10@yeah.net 不加引号    查看用户">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-29T03:37:22.087Z">
+<meta property="og:updated_time" content="2019-11-29T08:46:44.334Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/24/hexo%E6%95%99%E7%A8%8B/">
 
@@ -297,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-29 11:37:22" itemprop="dateModified" datetime="2019-10-29T11:37:22+08:00">2019-10-29</time>
+                <time title="修改时间：2019-11-29 16:46:44" itemprop="dateModified" datetime="2019-11-29T16:46:44+08:00">2019-11-29</time>
               </span>
             
           
@@ -336,7 +336,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>327</span>
+              <span>865</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -383,6 +383,24 @@
 </li>
 </ol>
 <p>5.将ssh添加到github上面</p>
+<ul>
+<li>服务器配置</li>
+</ul>
+<ol>
+<li><p>安装git<br>sudo apt-get install git-core</p>
+</li>
+<li><p>安装nodejs(低版本有问题)<br>  curl -sL <a href="https://deb.nodesource.com/setup_13.x" target="_blank" rel="noopener">https://deb.nodesource.com/setup_13.x</a> | sudo -E bash -<br>  sudo apt-get install -y nodejs<br>  测试nodejs版本<br>  nodejs -v</p>
+</li>
+<li><p>安装npm<br> 第一步：在你的用户文件下新建一个文件夹，这个.npm-global 名字可以用你自己喜欢的名字替换，推荐直接使用这个名字。<br> mkdir ~/.npm-global</p>
+<p> 第二步：更改node的安装连接<br> npm config set prefix ‘~/.npm-global’</p>
+<p> 第三步：在用户的profile下增加path，为的是系统能够找到可执行文件的目录<br> export PATH=~/.npm-global/bin:$PATH</p>
+<p> #第四步：update profile。使其生效<br> source ~/.profile</p>
+</li>
+</ol>
+<p>安装hexo<br>    npm install -g hexo<br>    npm install hexo –save</p>
+<p>安装nginx</p>
+<p>配置nginx<br><a href="http://zyy1217.com/2018/10/01/%E4%BD%BF%E7%94%A8Git%E9%83%A8%E7%BD%B2Hexo%E5%8D%9A%E5%AE%A2%E5%88%B0Ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank" rel="noopener">nginx配置</a></p>
+<pre><code>此时打开浏览器访问自己【主机的ip：4000】就可以看到我们搭建成功的博客页面。</code></pre><p>但是这仅仅是本地的，接下来把博客部署到 GitHub 上面我们就可以脱离本地访问了。</p>
 
     </div>
     
@@ -489,7 +507,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -502,7 +520,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -515,7 +533,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -552,12 +570,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">53k</span>
+    <span title="站点总字数">56k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">48 分钟</span>
+    <span title="站点阅读时长">51 分钟</span>
 </div>
 
 <!--  页脚   -->
@@ -572,7 +590,7 @@
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.9k字</span>
+  <span class="post-count">博客全站共7.3k字</span>
   </div>
 
 <!-- hexo 版权
