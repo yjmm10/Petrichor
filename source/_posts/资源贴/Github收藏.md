@@ -61,6 +61,5 @@ categories: 资源
 # Python
 
 1. [Python进阶](https://github.com/eastlakeside/interpy-zh)
-2. 
 
 

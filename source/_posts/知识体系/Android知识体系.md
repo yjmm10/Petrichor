@@ -45,6 +45,22 @@ jkjk
   [BuzzerBeater](https://github.com/itsMelo/BuzzerBeater)
 
 {% endnote %}
+--------------
+
+{% note defalut %}
+- JNI-NDK
+1. [cmake jni](https://blog.csdn.net/qq_38315190/article/details/83583317)
+2.   {% label default@失效  %}[生成class、h文件](https://blog.csdn.net/u010209842/article/details/53767825)
+
+{% endnote %}
+----------------------
+{% note defalut %}
+- 兼容适配
+1. [Android 版本适配问题](https://www.jianshu.com/p/74b43dd828b0)
+
+
+
+{% endnote %}
 
 
   
